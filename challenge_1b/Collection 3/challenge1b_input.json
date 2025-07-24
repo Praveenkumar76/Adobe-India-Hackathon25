@@ -1,0 +1,31 @@
+{
+  "challenge_info": {
+    "challenge_id": "round_1b_001",
+    "test_case_name": "vegetarian_catering"
+  },
+  "documents": [
+    {"filename": "PDFs/Dinner Ideas - Mains_1.pdf", "title": "Dinner Ideas - Mains Part 1"},
+    {"filename": "PDFs/Dinner Ideas - Mains_2.pdf", "title": "Dinner Ideas - Mains Part 2"},
+    {"filename": "PDFs/Dinner Ideas - Mains_3.pdf", "title": "Dinner Ideas - Mains Part 3"},
+    {"filename": "PDFs/Dinner Ideas - Sides_1.pdf", "title": "Dinner Ideas - Sides Part 1"},
+    {"filename": "PDFs/Dinner Ideas - Sides_2.pdf", "title": "Dinner Ideas - Sides Part 2"},
+    {"filename": "PDFs/Dinner Ideas - Sides_3.pdf", "title": "Dinner Ideas - Sides Part 3"},
+    {"filename": "PDFs/Dinner Ideas - Sides_4.pdf", "title": "Dinner Ideas - Sides Part 4"},
+    {"filename": "PDFs/Lunch Ideas.pdf", "title": "Lunch Ideas"},
+    {"filename": "PDFs/Breakfast Ideas.pdf", "title": "Breakfast Ideas"}
+  ],
+  "persona": {
+    "role": "Food Contractor",
+    "expertise": "Catering and Event Planning",
+    "background": "10 years experience in corporate catering"
+  },
+  "job_to_be_done": {
+    "task": "Prepare vegetarian buffet-style dinner menu for corporate gathering",
+    "objectives": [
+      "Design balanced vegetarian menu",
+      "Ensure proper portion planning",
+      "Accommodate common dietary restrictions",
+      "Maintain food safety standards"
+    ]
+  }
+} 

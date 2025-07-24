@@ -1,0 +1,1175 @@
+{
+  "title": "Introduction",
+  "outline": [
+    {
+      "level": "H3",
+      "text": "U.S. Government Printing Office Federal Digital System",
+      "page": 1
+    },
+    {
+      "level": "H1",
+      "text": "System Design Document",
+      "page": 1
+    },
+    {
+      "level": "H3",
+      "text": "Volume I: System Architecture",
+      "page": 1
+    },
+    {
+      "level": "H3",
+      "text": "R1C2 Edition",
+      "page": 1
+    },
+    {
+      "level": "H3",
+      "text": "Prepared by: FDsys Program",
+      "page": 1
+    },
+    {
+      "level": "H3",
+      "text": "Office of the Chief Information Officer U.S. Government Printing Office",
+      "page": 1
+    },
+    {
+      "level": "H3",
+      "text": "September 2008",
+      "page": 1
+    },
+    {
+      "level": "H2",
+      "text": "サプティヤ",
+      "page": 1
+    },
+    {
+      "level": "H3",
+      "text": "Revision History",
+      "page": 2
+    },
+    {
+      "level": "H3",
+      "text": "Revision Date",
+      "page": 2
+    },
+    {
+      "level": "H3",
+      "text": "Description",
+      "page": 2
+    },
+    {
+      "level": "H1",
+      "text": "Introduction",
+      "page": 4
+    },
+    {
+      "level": "H2",
+      "text": "1.1 Purpose",
+      "page": 4
+    },
+    {
+      "level": "H2",
+      "text": "1.2 System Design Document",
+      "page": 4
+    },
+    {
+      "level": "H3",
+      "text": "Lead Author",
+      "page": 4
+    },
+    {
+      "level": "H2",
+      "text": "1.3 Audience",
+      "page": 5
+    },
+    {
+      "level": "H2",
+      "text": "1.4 Document Organization",
+      "page": 5
+    },
+    {
+      "level": "H3",
+      "text": "Section Purpose",
+      "page": 5
+    },
+    {
+      "level": "H2",
+      "text": "1.5 References",
+      "page": 5
+    },
+    {
+      "level": "H3",
+      "text": "System Overview",
+      "page": 6
+    },
+    {
+      "level": "H2",
+      "text": "2.1 Purpose of the FDsys",
+      "page": 6
+    },
+    {
+      "level": "H3",
+      "text": "Business Information",
+      "page": 6
+    },
+    {
+      "level": "H3",
+      "text": "Systems Pillar:",
+      "page": 6
+    },
+    {
+      "level": "H3",
+      "text": "Enterprise Resource",
+      "page": 6
+    },
+    {
+      "level": "H3",
+      "text": "Management",
+      "page": 6
+    },
+    {
+      "level": "H3",
+      "text": "Content Management",
+      "page": 6
+    },
+    {
+      "level": "H3",
+      "text": "Systems Pillar:",
+      "page": 6
+    },
+    {
+      "level": "H3",
+      "text": "Metadata",
+      "page": 6
+    },
+    {
+      "level": "H3",
+      "text": "GPO Mission",
+      "page": 6
+    },
+    {
+      "level": "H3",
+      "text": "Digital Production",
+      "page": 6
+    },
+    {
+      "level": "H3",
+      "text": "Systems Pillar:",
+      "page": 6
+    },
+    {
+      "level": "H3",
+      "text": "Produce Physical",
+      "page": 6
+    },
+    {
+      "level": "H3",
+      "text": "Products",
+      "page": 6
+    },
+    {
+      "level": "H3",
+      "text": "Figure 2.1-1: Three Information Systems Pillars",
+      "page": 6
+    },
+    {
+      "level": "H3",
+      "text": "Content Management",
+      "page": 6
+    },
+    {
+      "level": "H3",
+      "text": "Content Preservation",
+      "page": 7
+    },
+    {
+      "level": "H3",
+      "text": "Content Access",
+      "page": 7
+    },
+    {
+      "level": "H2",
+      "text": "2.2 FDsys Conceptual Design",
+      "page": 7
+    },
+    {
+      "level": "H3",
+      "text": "2.2.1 Three Subsystems View",
+      "page": 7
+    },
+    {
+      "level": "H3",
+      "text": "Figure 2.2-1 FDsys Conceptual Design",
+      "page": 8
+    },
+    {
+      "level": "H3",
+      "text": "2.2.2 User Characteristics",
+      "page": 8
+    },
+    {
+      "level": "H2",
+      "text": "2.3 Design Considerations",
+      "page": 9
+    },
+    {
+      "level": "H3",
+      "text": "2.3.1  FDsys and OAIS Model",
+      "page": 9
+    },
+    {
+      "level": "H3",
+      "text": "2.3.1.1 The OAIS Reference Model",
+      "page": 9
+    },
+    {
+      "level": "H3",
+      "text": "2.3.1.2 Impact of OAIS Model on FDsys Design",
+      "page": 10
+    },
+    {
+      "level": "H3",
+      "text": "2.3.2  XML in FDsys",
+      "page": 11
+    },
+    {
+      "level": "H3",
+      "text": "2.3.3  FDsys and GPO Enterprise Architecture",
+      "page": 11
+    },
+    {
+      "level": "H3",
+      "text": "Scope of Release 1C.2",
+      "page": 13
+    },
+    {
+      "level": "H2",
+      "text": "3.1 FDsys Infrastructure",
+      "page": 13
+    },
+    {
+      "level": "H2",
+      "text": "3.2 FDsys Information Packages and Metadata Management",
+      "page": 13
+    },
+    {
+      "level": "H2",
+      "text": "3.3 Content Submission",
+      "page": 13
+    },
+    {
+      "level": "H2",
+      "text": "3.4 GPO Access Replacement",
+      "page": 14
+    },
+    {
+      "level": "H3",
+      "text": "3.4.1  Incremental Approach",
+      "page": 14
+    },
+    {
+      "level": "H3",
+      "text": "3.4.2  Transition to FDsys",
+      "page": 15
+    },
+    {
+      "level": "H3",
+      "text": "Figure 3.4.2-1 Current GPO Access Processing and Planned Transition",
+      "page": 16
+    },
+    {
+      "level": "H2",
+      "text": "3.5 Summary",
+      "page": 17
+    },
+    {
+      "level": "H3",
+      "text": "System Architecture",
+      "page": 18
+    },
+    {
+      "level": "H2",
+      "text": "4.1 Application View",
+      "page": 18
+    },
+    {
+      "level": "H3",
+      "text": "4.1.1 Content Management Subsystem",
+      "page": 18
+    },
+    {
+      "level": "H3",
+      "text": "Content Parsing",
+      "page": 19
+    },
+    {
+      "level": "H3",
+      "text": "Packaging Application",
+      "page": 19
+    },
+    {
+      "level": "H3",
+      "text": "Documentum",
+      "page": 20
+    },
+    {
+      "level": "H3",
+      "text": "- User Authentication &",
+      "page": 20
+    },
+    {
+      "level": "H3",
+      "text": "- Workflows",
+      "page": 20
+    },
+    {
+      "level": "H3",
+      "text": "- Content Search",
+      "page": 20
+    },
+    {
+      "level": "H3",
+      "text": "- WebTop User Interface",
+      "page": 20
+    },
+    {
+      "level": "H3",
+      "text": "- Packaging Application",
+      "page": 20
+    },
+    {
+      "level": "H3",
+      "text": "- Content Parsing",
+      "page": 20
+    },
+    {
+      "level": "H3",
+      "text": "- Virus Check",
+      "page": 20
+    },
+    {
+      "level": "H3",
+      "text": "- Content Source",
+      "page": 20
+    },
+    {
+      "level": "H3",
+      "text": "- Adobe LiveCycle",
+      "page": 20
+    },
+    {
+      "level": "H1",
+      "text": "LDAP",
+      "page": 20
+    },
+    {
+      "level": "H1",
+      "text": "FAST  ESP",
+      "page": 20
+    },
+    {
+      "level": "H3",
+      "text": "- Full Text Indexing",
+      "page": 20
+    },
+    {
+      "level": "H3",
+      "text": "- Public Search Services",
+      "page": 20
+    },
+    {
+      "level": "H3",
+      "text": "- Search Application",
+      "page": 20
+    },
+    {
+      "level": "H3",
+      "text": "- Content Delivery",
+      "page": 20
+    },
+    {
+      "level": "H3",
+      "text": "Enterprise Service Bus",
+      "page": 20
+    },
+    {
+      "level": "H1",
+      "text": "References",
+      "page": 20
+    },
+    {
+      "level": "H3",
+      "text": "Figure 4.1-1 FDsys Application Architecture",
+      "page": 20
+    },
+    {
+      "level": "H3",
+      "text": "Content Source Module",
+      "page": 21
+    },
+    {
+      "level": "H3",
+      "text": "4.1.2 Archival Subsystem",
+      "page": 21
+    },
+    {
+      "level": "H3",
+      "text": "4.1.3 Access Subsystem",
+      "page": 21
+    },
+    {
+      "level": "H3",
+      "text": "4.1.4 ILS Integration",
+      "page": 22
+    },
+    {
+      "level": "H2",
+      "text": "4.2 Network and Storage View",
+      "page": 22
+    },
+    {
+      "level": "H3",
+      "text": "Figure 4.2-1 Network and Storage View",
+      "page": 23
+    },
+    {
+      "level": "H2",
+      "text": "4.3 Application Security View",
+      "page": 23
+    },
+    {
+      "level": "H3",
+      "text": "Figure 4.3-1 FDsys LDAP Integration",
+      "page": 24
+    },
+    {
+      "level": "H2",
+      "text": "4.4 Deployment View",
+      "page": 25
+    },
+    {
+      "level": "H3",
+      "text": "Figure 4.4-1 Deployment View",
+      "page": 25
+    },
+    {
+      "level": "H2",
+      "text": "4.5 System Component Model",
+      "page": 25
+    },
+    {
+      "level": "H3",
+      "text": "4.5.1 Submission Component",
+      "page": 26
+    },
+    {
+      "level": "H3",
+      "text": "4.5.2 Ingest Component",
+      "page": 26
+    },
+    {
+      "level": "H3",
+      "text": "4.5.3 Access Component",
+      "page": 27
+    },
+    {
+      "level": "H3",
+      "text": "- Submission Workflow",
+      "page": 28
+    },
+    {
+      "level": "H3",
+      "text": "- WebTop Submission User interfaces",
+      "page": 28
+    },
+    {
+      "level": "H3",
+      "text": "- Content Source",
+      "page": 28
+    },
+    {
+      "level": "H3",
+      "text": "- Migration Toolset",
+      "page": 28
+    },
+    {
+      "level": "H3",
+      "text": "- Processing Workflow",
+      "page": 28
+    },
+    {
+      "level": "H3",
+      "text": "- Content Parsers",
+      "page": 28
+    },
+    {
+      "level": "H3",
+      "text": "- WebTop User Interfaces",
+      "page": 28
+    },
+    {
+      "level": "H3",
+      "text": "- ILS Integration",
+      "page": 28
+    },
+    {
+      "level": "H3",
+      "text": "- Archival Process",
+      "page": 28
+    },
+    {
+      "level": "H3",
+      "text": "- Package Management",
+      "page": 28
+    },
+    {
+      "level": "H3",
+      "text": "- WebTop User Interfaces",
+      "page": 28
+    },
+    {
+      "level": "H3",
+      "text": "- Full-Fledged Search Application",
+      "page": 28
+    },
+    {
+      "level": "H3",
+      "text": "- Full Text Search Engine",
+      "page": 28
+    },
+    {
+      "level": "H3",
+      "text": "- Public Content Access and Delivery",
+      "page": 28
+    },
+    {
+      "level": "H3",
+      "text": "- COTS-based LDAP Integration",
+      "page": 28
+    },
+    {
+      "level": "H3",
+      "text": "Figure 4.5-1 High-Level Software Components",
+      "page": 28
+    },
+    {
+      "level": "H3",
+      "text": "4.5.4 Infrastructure Component",
+      "page": 29
+    },
+    {
+      "level": "H3",
+      "text": "4.5.5 Data Model",
+      "page": 29
+    },
+    {
+      "level": "H3",
+      "text": "Content Packaging",
+      "page": 30
+    },
+    {
+      "level": "H2",
+      "text": "5.1 Conceptual Package Model",
+      "page": 30
+    },
+    {
+      "level": "H3",
+      "text": "Figure 5.1-1 FDsys Conceptual Package Model",
+      "page": 30
+    },
+    {
+      "level": "H2",
+      "text": "5.2 Package Implementation Approaches",
+      "page": 31
+    },
+    {
+      "level": "H1",
+      "text": "5.2.1 SIP",
+      "page": 31
+    },
+    {
+      "level": "H3",
+      "text": "Figure 5.2-1 Package Structure for SIP and ACP",
+      "page": 32
+    },
+    {
+      "level": "H1",
+      "text": "5.2.2 ACP",
+      "page": 32
+    },
+    {
+      "level": "H1",
+      "text": "5.2.3 AIP",
+      "page": 32
+    },
+    {
+      "level": "H3",
+      "text": "Figure 5.2-2 Package Structure for AIP",
+      "page": 34
+    },
+    {
+      "level": "H1",
+      "text": "5.2.4 DIP",
+      "page": 34
+    },
+    {
+      "level": "H2",
+      "text": "5.3 Package Lifecycle",
+      "page": 34
+    },
+    {
+      "level": "H3",
+      "text": "Figure 5.3-1 Information Package Lifecycle",
+      "page": 35
+    },
+    {
+      "level": "H3",
+      "text": "Data Model",
+      "page": 36
+    },
+    {
+      "level": "H2",
+      "text": "6.1 Logical Data Model",
+      "page": 36
+    },
+    {
+      "level": "H3",
+      "text": "6.1.1 Content Data Model",
+      "page": 36
+    },
+    {
+      "level": "H3",
+      "text": "Figure 6.1-1 Content Logical Data Model",
+      "page": 38
+    },
+    {
+      "level": "H3",
+      "text": "6.1.2 Security Data Model",
+      "page": 39
+    },
+    {
+      "level": "H3",
+      "text": "- password - first_name",
+      "page": 40
+    },
+    {
+      "level": "H3",
+      "text": "- last_name - title",
+      "page": 40
+    },
+    {
+      "level": "H3",
+      "text": "- phone_number - mobile_number",
+      "page": 40
+    },
+    {
+      "level": "H3",
+      "text": "- email_address - fax_number",
+      "page": 40
+    },
+    {
+      "level": "H3",
+      "text": "- organization - address",
+      "page": 40
+    },
+    {
+      "level": "H3",
+      "text": "- address",
+      "page": 40
+    },
+    {
+      "level": "H3",
+      "text": "- address_line_2 - address_line_3",
+      "page": 40
+    },
+    {
+      "level": "H3",
+      "text": "- city - state",
+      "page": 40
+    },
+    {
+      "level": "H3",
+      "text": "- postal_code - contry",
+      "page": 40
+    },
+    {
+      "level": "H3",
+      "text": "- group_names+ - role_names+",
+      "page": 40
+    },
+    {
+      "level": "H3",
+      "text": "- user_list",
+      "page": 40
+    },
+    {
+      "level": "H3",
+      "text": "Figure 6.1-2 Security Logical Data Model",
+      "page": 40
+    },
+    {
+      "level": "H3",
+      "text": "6.1.3 Report Data Model",
+      "page": 40
+    },
+    {
+      "level": "H3",
+      "text": "- collection_name",
+      "page": 42
+    },
+    {
+      "level": "H3",
+      "text": "- newly_acquired_titles",
+      "page": 42
+    },
+    {
+      "level": "H3",
+      "text": "- legislative_form",
+      "page": 42
+    },
+    {
+      "level": "H3",
+      "text": "- legislative_number",
+      "page": 42
+    },
+    {
+      "level": "H3",
+      "text": "- legislative_action",
+      "page": 42
+    },
+    {
+      "level": "H3",
+      "text": "- available_online_date",
+      "page": 42
+    },
+    {
+      "level": "H3",
+      "text": "- available_online_time",
+      "page": 42
+    },
+    {
+      "level": "H3",
+      "text": "- number_of_pages",
+      "page": 42
+    },
+    {
+      "level": "H3",
+      "text": "- collection_name",
+      "page": 42
+    },
+    {
+      "level": "H3",
+      "text": "- cumulative_titles",
+      "page": 42
+    },
+    {
+      "level": "H3",
+      "text": "- total_pages",
+      "page": 42
+    },
+    {
+      "level": "H3",
+      "text": "- total_pages",
+      "page": 42
+    },
+    {
+      "level": "H3",
+      "text": "- collection_name",
+      "page": 42
+    },
+    {
+      "level": "H3",
+      "text": "- total_pages",
+      "page": 42
+    },
+    {
+      "level": "H3",
+      "text": "Figure 6.1-3 Report Logical Data Model",
+      "page": 42
+    },
+    {
+      "level": "H2",
+      "text": "6.2 Physical Data Model",
+      "page": 43
+    },
+    {
+      "level": "H3",
+      "text": "6.2.1 Content Data Model Implementation",
+      "page": 43
+    },
+    {
+      "level": "H3",
+      "text": "SIP and ACP Implementation",
+      "page": 43
+    },
+    {
+      "level": "H3",
+      "text": "AIP Implementation",
+      "page": 43
+    },
+    {
+      "level": "H3",
+      "text": "DIP Implementation",
+      "page": 43
+    },
+    {
+      "level": "H3",
+      "text": "FDsys Schema",
+      "page": 44
+    },
+    {
+      "level": "H3",
+      "text": "6.2.2 Security Data Model Implementation – LDAP integration",
+      "page": 44
+    },
+    {
+      "level": "H3",
+      "text": "6.2.3 Report Data Model Implementation",
+      "page": 44
+    },
+    {
+      "level": "H3",
+      "text": "OAIS Functional Model Implementation",
+      "page": 46
+    },
+    {
+      "level": "H3",
+      "text": "Figure 7-1 OAIS Functional Entities",
+      "page": 46
+    },
+    {
+      "level": "H2",
+      "text": "7.1 Content Submission",
+      "page": 47
+    },
+    {
+      "level": "H3",
+      "text": "7.1.1 Interactive Submission",
+      "page": 48
+    },
+    {
+      "level": "H3",
+      "text": "Figure 7.1-1 Interactive Submission",
+      "page": 48
+    },
+    {
+      "level": "H3",
+      "text": "7.1.2 Folder-Based Submission",
+      "page": 48
+    },
+    {
+      "level": "H3",
+      "text": "Figure 7.1-2 Folder-Based Submission",
+      "page": 49
+    },
+    {
+      "level": "H3",
+      "text": "7.1.3 Bulk Submission",
+      "page": 49
+    },
+    {
+      "level": "H3",
+      "text": "Figure 7.1-3 Bulk Submission",
+      "page": 50
+    },
+    {
+      "level": "H2",
+      "text": "7.2 Ingest",
+      "page": 50
+    },
+    {
+      "level": "H3",
+      "text": "Figure 7.2-1 Functions of Ingest in OAIS",
+      "page": 51
+    },
+    {
+      "level": "H3",
+      "text": "Receive Submission",
+      "page": 51
+    },
+    {
+      "level": "H3",
+      "text": "Quality Assurance",
+      "page": 51
+    },
+    {
+      "level": "H3",
+      "text": "Figure 7.2-2 FDsys Ingest Process Model",
+      "page": 52
+    },
+    {
+      "level": "H3",
+      "text": "Coordinate Updates",
+      "page": 53
+    },
+    {
+      "level": "H3",
+      "text": "Generate Descriptive Information",
+      "page": 53
+    },
+    {
+      "level": "H2",
+      "text": "7.3 Archival Storage",
+      "page": 54
+    },
+    {
+      "level": "H2",
+      "text": "7.4 Data Management",
+      "page": 55
+    },
+    {
+      "level": "H2",
+      "text": "7.5 Access",
+      "page": 55
+    },
+    {
+      "level": "H2",
+      "text": "7.6 Administration",
+      "page": 56
+    },
+    {
+      "level": "H2",
+      "text": "7.7 Preservation Planning",
+      "page": 56
+    },
+    {
+      "level": "H3",
+      "text": "Business Process Implementation",
+      "page": 57
+    },
+    {
+      "level": "H2",
+      "text": "8.1 Overview",
+      "page": 57
+    },
+    {
+      "level": "H3",
+      "text": "Figure 8-1 Business Process Overview",
+      "page": 59
+    },
+    {
+      "level": "H2",
+      "text": "8.2 Congressional Submission",
+      "page": 60
+    },
+    {
+      "level": "H3",
+      "text": "8.2.1 Folder-Based Submission",
+      "page": 60
+    },
+    {
+      "level": "H3",
+      "text": "Figure 8.2-1 Folder-Based Submission Process",
+      "page": 62
+    },
+    {
+      "level": "H3",
+      "text": "8.2.2 Interactive Submission",
+      "page": 63
+    },
+    {
+      "level": "H3",
+      "text": "Figure 8.2-2 Interactive Submission Process",
+      "page": 64
+    },
+    {
+      "level": "H2",
+      "text": "8.3 Ingest Process",
+      "page": 65
+    },
+    {
+      "level": "H3",
+      "text": "Figure 8.3-1 Algorithm of Timestamp Signature",
+      "page": 65
+    },
+    {
+      "level": "H3",
+      "text": "Figure 8.3-2 Ingest Process",
+      "page": 66
+    },
+    {
+      "level": "H2",
+      "text": "8.4 Access Processing Workflow",
+      "page": 67
+    },
+    {
+      "level": "H3",
+      "text": "Figure 8.4-1 Access Processing Workflow",
+      "page": 68
+    },
+    {
+      "level": "H2",
+      "text": "8.5 Package Updating Process",
+      "page": 69
+    },
+    {
+      "level": "H3",
+      "text": "Figure 8.5-1 Package Updating Process",
+      "page": 70
+    },
+    {
+      "level": "H2",
+      "text": "8.6 Archival Updating Process",
+      "page": 71
+    },
+    {
+      "level": "H3",
+      "text": "Figure 8.6-1 Archival Updating Process",
+      "page": 72
+    },
+    {
+      "level": "H2",
+      "text": "8.7 AIP Deletion Workflow",
+      "page": 73
+    },
+    {
+      "level": "H3",
+      "text": "Figure 8.7-1 AIP Deletion Workflow",
+      "page": 74
+    },
+    {
+      "level": "H3",
+      "text": "Data Migration",
+      "page": 75
+    },
+    {
+      "level": "H2",
+      "text": "9.1 Data Analysis",
+      "page": 75
+    },
+    {
+      "level": "H2",
+      "text": "9.2 Migration Tool",
+      "page": 75
+    },
+    {
+      "level": "H2",
+      "text": "9.3 Migration Setup",
+      "page": 75
+    },
+    {
+      "level": "H3",
+      "text": "Figure 9-1: Data Migration Setup",
+      "page": 76
+    },
+    {
+      "level": "H1",
+      "text": "10. Application Integrations",
+      "page": 78
+    },
+    {
+      "level": "H2",
+      "text": "10.1 Integration Overview",
+      "page": 78
+    },
+    {
+      "level": "H3",
+      "text": "Documentum – FAST Integration",
+      "page": 78
+    },
+    {
+      "level": "H3",
+      "text": "Figure 10.1-1 FDsys Integration Endpoints",
+      "page": 79
+    },
+    {
+      "level": "H3",
+      "text": "Parser Integration",
+      "page": 79
+    },
+    {
+      "level": "H3",
+      "text": "Adobe LiveCycle Integration",
+      "page": 79
+    },
+    {
+      "level": "H3",
+      "text": "ListServ & eDocket Server Integration",
+      "page": 80
+    },
+    {
+      "level": "H3",
+      "text": "Virus Scan Integration",
+      "page": 80
+    },
+    {
+      "level": "H3",
+      "text": "ILS Integration",
+      "page": 80
+    },
+    {
+      "level": "H2",
+      "text": "10.2 External System Integration",
+      "page": 80
+    },
+    {
+      "level": "H3",
+      "text": "Figure 10.2-1 Application Integration through the ESB",
+      "page": 81
+    },
+    {
+      "level": "H3",
+      "text": "ESB-Based Integration with ILS",
+      "page": 81
+    },
+    {
+      "level": "H3",
+      "text": "Figure 10.2-2 FDsys and ILS Integration",
+      "page": 82
+    },
+    {
+      "level": "H1",
+      "text": "11. Hardware Architecture",
+      "page": 83
+    },
+    {
+      "level": "H2",
+      "text": "11.1 Storage Architecture",
+      "page": 83
+    },
+    {
+      "level": "H3",
+      "text": "Hot Folder",
+      "page": 83
+    },
+    {
+      "level": "H3",
+      "text": "SIP / ACP Storage",
+      "page": 83
+    },
+    {
+      "level": "H3",
+      "text": "Figure 11.1-1 Storage Architecture",
+      "page": 84
+    },
+    {
+      "level": "H3",
+      "text": "AIP Storage",
+      "page": 85
+    },
+    {
+      "level": "H3",
+      "text": "ACP Cache Storage",
+      "page": 85
+    },
+    {
+      "level": "H3",
+      "text": "DAS Storage",
+      "page": 85
+    },
+    {
+      "level": "H3",
+      "text": "SAN Storage",
+      "page": 85
+    },
+    {
+      "level": "H2",
+      "text": "11.2 Hardware Architecture",
+      "page": 85
+    },
+    {
+      "level": "H3",
+      "text": "Figure 11.2-1 Hardware Architecture",
+      "page": 86
+    }
+  ]
+}

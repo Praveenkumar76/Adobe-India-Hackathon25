@@ -1,0 +1,23 @@
+# Use alpine for smallest size
+FROM python:3.9-alpine
+
+WORKDIR /app
+
+# Copy only essential files
+COPY requirements-ultra-minimal.txt .
+COPY smart_doc_intel/ ./smart_doc_intel/
+COPY process_ultra_fast.py .
+
+# Install dependencies in single layer
+RUN pip install --no-cache-dir -r requirements-ultra-minimal.txt && \
+    rm -rf ~/.cache/pip && \
+    rm requirements-ultra-minimal.txt
+
+# Create collection directories
+RUN mkdir -p "/app/Collection 1" "/app/Collection 2" "/app/Collection 3"
+
+# Set Python to run in optimized mode
+ENV PYTHONOPTIMIZE=1
+ENV PYTHONDONTWRITEBYTECODE=1
+
+CMD ["python", "process_ultra_fast.py"] 

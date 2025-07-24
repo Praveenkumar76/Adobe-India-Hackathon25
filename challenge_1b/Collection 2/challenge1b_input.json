@@ -1,0 +1,37 @@
+{
+  "challenge_info": {
+    "challenge_id": "round_1b_003",
+    "test_case_name": "acrobat_forms"
+  },
+  "documents": [
+    {"filename": "PDFs/Learn Acrobat - Create and Convert_1.pdf", "title": "Learn Acrobat - Create and Convert Part 1"},
+    {"filename": "PDFs/Learn Acrobat - Create and Convert_2.pdf", "title": "Learn Acrobat - Create and Convert Part 2"},
+    {"filename": "PDFs/Learn Acrobat - Edit_1.pdf", "title": "Learn Acrobat - Edit Part 1"},
+    {"filename": "PDFs/Learn Acrobat - Edit_2.pdf", "title": "Learn Acrobat - Edit Part 2"},
+    {"filename": "PDFs/Learn Acrobat - Export_1.pdf", "title": "Learn Acrobat - Export Part 1"},
+    {"filename": "PDFs/Learn Acrobat - Export_2.pdf", "title": "Learn Acrobat - Export Part 2"},
+    {"filename": "PDFs/Learn Acrobat - Fill and Sign.pdf", "title": "Learn Acrobat - Fill and Sign"},
+    {"filename": "PDFs/Learn Acrobat - Generative AI_1.pdf", "title": "Learn Acrobat - Generative AI Part 1"},
+    {"filename": "PDFs/Learn Acrobat - Generative AI_2.pdf", "title": "Learn Acrobat - Generative AI Part 2"},
+    {"filename": "PDFs/Learn Acrobat - Request e-signatures_1.pdf", "title": "Learn Acrobat - Request e-signatures Part 1"},
+    {"filename": "PDFs/Learn Acrobat - Request e-signatures_2.pdf", "title": "Learn Acrobat - Request e-signatures Part 2"},
+    {"filename": "PDFs/Learn Acrobat - Share_1.pdf", "title": "Learn Acrobat - Share Part 1"},
+    {"filename": "PDFs/Learn Acrobat - Share_2.pdf", "title": "Learn Acrobat - Share Part 2"},
+    {"filename": "PDFs/The Ultimate PDF Sharing Checklist.pdf", "title": "The Ultimate PDF Sharing Checklist"},
+    {"filename": "PDFs/Test Your Acrobat Exporting Skills.pdf", "title": "Test Your Acrobat Exporting Skills"}
+  ],
+  "persona": {
+    "role": "HR Professional",
+    "expertise": "Human Resources Management",
+    "background": "5 years experience in HR operations and compliance"
+  },
+  "job_to_be_done": {
+    "task": "Create and manage fillable forms for onboarding and compliance",
+    "objectives": [
+      "Create user-friendly onboarding forms",
+      "Ensure form security and compliance",
+      "Set up efficient data collection",
+      "Implement digital signature workflows"
+    ]
+  }
+} 

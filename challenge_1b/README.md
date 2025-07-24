@@ -84,47 +84,15 @@ Challenge_1b/
   ]
 }
 ```
-
-## Installation
-
-1. **Create virtual environment**:
-```bash
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
+## Run
 ```
-
-2. **Install dependencies**:
-```bash
-pip install -r requirements.txt
-```
-
-3. **Download spaCy model**:
-```bash
-python -m spacy download en_core_web_sm
+docker build -f Dockerfile.fast -t challenge1b-fast .
+docker run --rm -v "${PWD}:/workspace" challenge1b-fast
 ```
 
 ## Usage
 
-### Process All Collections
-```bash
-python process_collections.py
-```
-
-### Process Individual Collection
-```python
-from smart_doc_intel import DocumentProcessor
-from smart_doc_intel.models import InputConfig
-import json
-
-# Load configuration
-with open("Collection 1/challenge1b_input.json") as f:
-    config_data = json.load(f)
-config = InputConfig(**config_data)
-
-# Process documents
-processor = DocumentProcessor()
-# ... processing logic
-```
+All operations are performed using Docker containers - no local Python installation required.
 
 ## Key Features
 

@@ -87,7 +87,7 @@ Challenge_1b/
 ## Run
 ```
 docker build -f Dockerfile.fast -t challenge1b-fast .
-docker run --rm -v "${PWD}:/workspace" challenge1b-fast
+docker run --rm -v "${PWD}:/app" challenge1b-fast
 ```
 
 ## Usage

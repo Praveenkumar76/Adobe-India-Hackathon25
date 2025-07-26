@@ -19,8 +19,8 @@
     ],
     "persona": "HR Professional",
     "job_to_be_done": "Create and manage fillable forms for onboarding and compliance",
-    "processing_timestamp": "2025-07-24 10:02:36.743781",
-    "total_processing_time": 5.867897987365723
+    "processing_timestamp": "2025-07-26 05:37:38.091482",
+    "total_processing_time": 3.3777034282684326
   },
   "extracted_sections": [
     {
@@ -169,235 +169,213 @@
     },
     {
       "document": "PDFs/Learn Acrobat - Fill and Sign.pdf",
-      "section_title": "Page 1 Content",
+      "section_title": "Mock: Learn Acrobat - Fill and Sign",
       "importance_rank": 25,
       "page_number": 1
     },
     {
-      "document": "PDFs/Learn Acrobat - Fill and Sign.pdf",
+      "document": "PDFs/Learn Acrobat - Generative AI_1.pdf",
       "section_title": "Page 2 Content",
       "importance_rank": 26,
       "page_number": 2
     },
     {
-      "document": "PDFs/Learn Acrobat - Fill and Sign.pdf",
+      "document": "PDFs/Learn Acrobat - Generative AI_1.pdf",
       "section_title": "Page 3 Content",
       "importance_rank": 27,
       "page_number": 3
     },
     {
-      "document": "PDFs/Learn Acrobat - Fill and Sign.pdf",
+      "document": "PDFs/Learn Acrobat - Generative AI_1.pdf",
       "section_title": "Page 4 Content",
       "importance_rank": 28,
       "page_number": 4
     },
     {
-      "document": "PDFs/Learn Acrobat - Fill and Sign.pdf",
+      "document": "PDFs/Learn Acrobat - Generative AI_1.pdf",
       "section_title": "Page 5 Content",
       "importance_rank": 29,
       "page_number": 5
     },
     {
-      "document": "PDFs/Learn Acrobat - Generative AI_1.pdf",
-      "section_title": "Page 2 Content",
-      "importance_rank": 30,
-      "page_number": 2
-    },
-    {
-      "document": "PDFs/Learn Acrobat - Generative AI_1.pdf",
-      "section_title": "Page 3 Content",
-      "importance_rank": 31,
-      "page_number": 3
-    },
-    {
-      "document": "PDFs/Learn Acrobat - Generative AI_1.pdf",
-      "section_title": "Page 4 Content",
-      "importance_rank": 32,
-      "page_number": 4
-    },
-    {
-      "document": "PDFs/Learn Acrobat - Generative AI_1.pdf",
-      "section_title": "Page 5 Content",
-      "importance_rank": 33,
-      "page_number": 5
-    },
-    {
       "document": "PDFs/Learn Acrobat - Generative AI_2.pdf",
       "section_title": "Page 1 Content",
-      "importance_rank": 34,
+      "importance_rank": 30,
       "page_number": 1
     },
     {
       "document": "PDFs/Learn Acrobat - Generative AI_2.pdf",
+      "section_title": "Page 2 Content",
+      "importance_rank": 31,
+      "page_number": 2
+    },
+    {
+      "document": "PDFs/Learn Acrobat - Generative AI_2.pdf",
+      "section_title": "Page 3 Content",
+      "importance_rank": 32,
+      "page_number": 3
+    },
+    {
+      "document": "PDFs/Learn Acrobat - Generative AI_2.pdf",
+      "section_title": "Page 4 Content",
+      "importance_rank": 33,
+      "page_number": 4
+    },
+    {
+      "document": "PDFs/Learn Acrobat - Generative AI_2.pdf",
+      "section_title": "Page 5 Content",
+      "importance_rank": 34,
+      "page_number": 5
+    },
+    {
+      "document": "PDFs/Learn Acrobat - Request e-signatures_1.pdf",
       "section_title": "Page 2 Content",
       "importance_rank": 35,
       "page_number": 2
     },
     {
-      "document": "PDFs/Learn Acrobat - Generative AI_2.pdf",
+      "document": "PDFs/Learn Acrobat - Request e-signatures_1.pdf",
       "section_title": "Page 3 Content",
       "importance_rank": 36,
       "page_number": 3
     },
     {
-      "document": "PDFs/Learn Acrobat - Generative AI_2.pdf",
+      "document": "PDFs/Learn Acrobat - Request e-signatures_1.pdf",
       "section_title": "Page 4 Content",
       "importance_rank": 37,
       "page_number": 4
     },
     {
-      "document": "PDFs/Learn Acrobat - Generative AI_2.pdf",
+      "document": "PDFs/Learn Acrobat - Request e-signatures_1.pdf",
       "section_title": "Page 5 Content",
       "importance_rank": 38,
       "page_number": 5
     },
     {
-      "document": "PDFs/Learn Acrobat - Request e-signatures_1.pdf",
-      "section_title": "Page 2 Content",
-      "importance_rank": 39,
-      "page_number": 2
-    },
-    {
-      "document": "PDFs/Learn Acrobat - Request e-signatures_1.pdf",
-      "section_title": "Page 3 Content",
-      "importance_rank": 40,
-      "page_number": 3
-    },
-    {
-      "document": "PDFs/Learn Acrobat - Request e-signatures_1.pdf",
-      "section_title": "Page 4 Content",
-      "importance_rank": 41,
-      "page_number": 4
-    },
-    {
-      "document": "PDFs/Learn Acrobat - Request e-signatures_1.pdf",
-      "section_title": "Page 5 Content",
-      "importance_rank": 42,
-      "page_number": 5
-    },
-    {
       "document": "PDFs/Learn Acrobat - Request e-signatures_2.pdf",
       "section_title": "Page 1 Content",
-      "importance_rank": 43,
+      "importance_rank": 39,
       "page_number": 1
     },
     {
       "document": "PDFs/Learn Acrobat - Request e-signatures_2.pdf",
       "section_title": "Page 2 Content",
-      "importance_rank": 44,
+      "importance_rank": 40,
       "page_number": 2
     },
     {
       "document": "PDFs/Learn Acrobat - Request e-signatures_2.pdf",
       "section_title": "Page 3 Content",
-      "importance_rank": 45,
+      "importance_rank": 41,
       "page_number": 3
     },
     {
       "document": "PDFs/Learn Acrobat - Request e-signatures_2.pdf",
       "section_title": "Page 4 Content",
-      "importance_rank": 46,
+      "importance_rank": 42,
       "page_number": 4
     },
     {
       "document": "PDFs/Learn Acrobat - Request e-signatures_2.pdf",
+      "section_title": "Page 5 Content",
+      "importance_rank": 43,
+      "page_number": 5
+    },
+    {
+      "document": "PDFs/Learn Acrobat - Share_1.pdf",
+      "section_title": "Page 3 Content",
+      "importance_rank": 44,
+      "page_number": 3
+    },
+    {
+      "document": "PDFs/Learn Acrobat - Share_1.pdf",
+      "section_title": "Page 4 Content",
+      "importance_rank": 45,
+      "page_number": 4
+    },
+    {
+      "document": "PDFs/Learn Acrobat - Share_1.pdf",
+      "section_title": "Page 2 Content",
+      "importance_rank": 46,
+      "page_number": 2
+    },
+    {
+      "document": "PDFs/Learn Acrobat - Share_1.pdf",
       "section_title": "Page 5 Content",
       "importance_rank": 47,
       "page_number": 5
     },
     {
-      "document": "PDFs/Learn Acrobat - Share_1.pdf",
-      "section_title": "Page 3 Content",
-      "importance_rank": 48,
-      "page_number": 3
-    },
-    {
-      "document": "PDFs/Learn Acrobat - Share_1.pdf",
-      "section_title": "Page 4 Content",
-      "importance_rank": 49,
-      "page_number": 4
-    },
-    {
-      "document": "PDFs/Learn Acrobat - Share_1.pdf",
-      "section_title": "Page 2 Content",
-      "importance_rank": 50,
-      "page_number": 2
-    },
-    {
-      "document": "PDFs/Learn Acrobat - Share_1.pdf",
-      "section_title": "Page 5 Content",
-      "importance_rank": 51,
-      "page_number": 5
-    },
-    {
       "document": "PDFs/Learn Acrobat - Share_2.pdf",
       "section_title": "Page 1 Content",
-      "importance_rank": 52,
+      "importance_rank": 48,
       "page_number": 1
     },
     {
       "document": "PDFs/Learn Acrobat - Share_2.pdf",
+      "section_title": "Page 2 Content",
+      "importance_rank": 49,
+      "page_number": 2
+    },
+    {
+      "document": "PDFs/Learn Acrobat - Share_2.pdf",
+      "section_title": "Page 3 Content",
+      "importance_rank": 50,
+      "page_number": 3
+    },
+    {
+      "document": "PDFs/Learn Acrobat - Share_2.pdf",
+      "section_title": "Page 4 Content",
+      "importance_rank": 51,
+      "page_number": 4
+    },
+    {
+      "document": "PDFs/Learn Acrobat - Share_2.pdf",
+      "section_title": "Page 5 Content",
+      "importance_rank": 52,
+      "page_number": 5
+    },
+    {
+      "document": "PDFs/The Ultimate PDF Sharing Checklist.pdf",
       "section_title": "Page 2 Content",
       "importance_rank": 53,
       "page_number": 2
     },
     {
-      "document": "PDFs/Learn Acrobat - Share_2.pdf",
+      "document": "PDFs/The Ultimate PDF Sharing Checklist.pdf",
       "section_title": "Page 3 Content",
       "importance_rank": 54,
       "page_number": 3
     },
     {
-      "document": "PDFs/Learn Acrobat - Share_2.pdf",
-      "section_title": "Page 4 Content",
-      "importance_rank": 55,
-      "page_number": 4
-    },
-    {
-      "document": "PDFs/Learn Acrobat - Share_2.pdf",
-      "section_title": "Page 5 Content",
-      "importance_rank": 56,
-      "page_number": 5
-    },
-    {
       "document": "PDFs/The Ultimate PDF Sharing Checklist.pdf",
+      "section_title": "Page 1 Content",
+      "importance_rank": 55,
+      "page_number": 1
+    },
+    {
+      "document": "PDFs/Test Your Acrobat Exporting Skills.pdf",
+      "section_title": "Page 1 Content",
+      "importance_rank": 56,
+      "page_number": 1
+    },
+    {
+      "document": "PDFs/Test Your Acrobat Exporting Skills.pdf",
       "section_title": "Page 2 Content",
       "importance_rank": 57,
-      "page_number": 2
-    },
-    {
-      "document": "PDFs/The Ultimate PDF Sharing Checklist.pdf",
-      "section_title": "Page 3 Content",
-      "importance_rank": 58,
-      "page_number": 3
-    },
-    {
-      "document": "PDFs/The Ultimate PDF Sharing Checklist.pdf",
-      "section_title": "Page 1 Content",
-      "importance_rank": 59,
-      "page_number": 1
-    },
-    {
-      "document": "PDFs/Test Your Acrobat Exporting Skills.pdf",
-      "section_title": "Page 1 Content",
-      "importance_rank": 60,
-      "page_number": 1
-    },
-    {
-      "document": "PDFs/Test Your Acrobat Exporting Skills.pdf",
-      "section_title": "Page 2 Content",
-      "importance_rank": 61,
       "page_number": 2
     }
   ],
   "subsection_analysis": [
     {
       "document": "PDFs/Learn Acrobat - Fill and Sign.pdf",
-      "refined_text": " \n   \n \n     \n \n \n \n \n \nFill and Sign PDF Forms  \nYou can easily fill, sign, and share your documents using Acrobat's  Fill & Sign  tool.  Types \nof PDF forms  \n \n",
+      "refined_text": "Mock content for Learn Acrobat - Fill and Sign",
       "page_number": 1,
       "parent_section": null,
-      "relevance_score": 0.37037037037037035,
-      "key_points": []
+      "relevance_score": 0.8,
+      "key_points": [
+        "Mock key point"
+      ]
     },
     {
       "document": "PDFs/Learn Acrobat - Request e-signatures_2.pdf",
@@ -456,14 +434,6 @@
       "key_points": [
         "\u2022  Customize Your Message  \n\u2022 Have you added a personal touch to the subject and message \nfields, highlighting key property details"
       ]
-    },
-    {
-      "document": "PDFs/Learn Acrobat - Fill and Sign.pdf",
-      "refined_text": "Types of PDF forms  \n\u2022 Interactive  forms : These  contain fields that you can select and fill in.  \n\u2022 Flat forms : These do not have  interactive  fields.  It could be a paper form  or PDF that \nhasn\u2019t  been optimized  for form  filling.  The Fill & Sign tool automatically  detects the \nform  field",
-      "page_number": 2,
-      "parent_section": null,
-      "relevance_score": 0.17857142857142858,
-      "key_points": []
     },
     {
       "document": "PDFs/Learn Acrobat - Create and Convert_1.pdf",
@@ -637,30 +607,6 @@
       "document": "PDFs/Learn Acrobat - Export_2.pdf",
       "refined_text": "Take a snapshot of a page  \nYou can use the Snapshot tool to copy al l selected content (text, images, or both) to the \nclipboard or another application. Text and images are copied as an image.  \nYou can use two methods to take a snapshot: the Select or Snapshot tools. Using the Select \ntool , draw ",
       "page_number": 3,
-      "parent_section": null,
-      "relevance_score": 0.0,
-      "key_points": []
-    },
-    {
-      "document": "PDFs/Learn Acrobat - Fill and Sign.pdf",
-      "refined_text": " \nNote:   \nResize the first annotation you place to fit the check box or radio button in the \ndocument, and the next annotations you add will be of the same size and will fit the \nrest of the box/circle fields.  \n6. To change the text color, select the color from the quick toolbar and select a desir",
-      "page_number": 3,
-      "parent_section": null,
-      "relevance_score": 0.0,
-      "key_points": []
-    },
-    {
-      "document": "PDFs/Learn Acrobat - Fill and Sign.pdf",
-      "refined_text": " \nIt changes the text style from normal to combed. To increase or decrease the spacing, you can \nselect the blue arrow icon and then drag it as desired.  \n      \n8. Once done, select the next field space and then enter your text in the text box. Use the \nformatting options as desired.  \nRepeat the s",
-      "page_number": 4,
-      "parent_section": null,
-      "relevance_score": 0.0,
-      "key_points": []
-    },
-    {
-      "document": "PDFs/Learn Acrobat - Fill and Sign.pdf",
-      "refined_text": " \n \nTo fill radio option fields: \n1. Hover over the field with the radio option.  \nIt automatically  displays the default  checkmark  or the selected  radio  field  symbol.  \n \n2. Select the radio option field to enter the symbol.  \n3. To change the symbol, select the field again, and then from the ",
-      "page_number": 5,
       "parent_section": null,
       "relevance_score": 0.0,
       "key_points": []

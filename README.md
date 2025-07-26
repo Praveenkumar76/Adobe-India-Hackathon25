@@ -63,15 +63,11 @@ All operations are performed using Docker containers - no local Python installat
 
 ## Docker Deployment
 
-### Build Image
-```bash
-docker build --platform linux/amd64 -t pdf-analyzer .
-```
-
 ### Run Container
 ```bash
 # Document structure analysis
-docker run --rm -v $(pwd)/input:/app/input -v $(pwd)/output:/app/output --network none pdf-analyzer
+docker build --platform linux/amd64 -t challenge1a:latest .
+docker run --rm -v "${PWD}/sample_dataset/pdfs:/app/input" -v "${PWD}/sample_dataset/outputs:/app/output" --network none challenge1a:latest
 
 # Collection analysis (fast version)
 docker build -f Dockerfile.fast -t challenge1b-fast .

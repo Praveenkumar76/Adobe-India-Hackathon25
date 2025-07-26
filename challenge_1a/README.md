@@ -76,7 +76,7 @@ JSON files in `/app/output` directory with the following structure:
    ```bash
    docker build --platform linux/amd64 -t challenge1a:latest .
    ```
-
+   
 2. **Run the solution:**
    ```bash
    docker run --rm -v "${PWD}/sample_dataset/pdfs:/app/input" -v "${PWD}/sample_dataset/outputs:/app/output" --network none challenge1a:latest

@@ -75,7 +75,7 @@ docker run --rm -v $(pwd)/input:/app/input -v $(pwd)/output:/app/output --networ
 
 # Collection analysis (fast version)
 docker build -f Dockerfile.fast -t challenge1b-fast .
-docker run --rm -v "${PWD}:/workspace" challenge1b-fast
+docker run --rm -v "${PWD}:/app" challenge1b-fast
 ```
 
 ## Input/Output Formats

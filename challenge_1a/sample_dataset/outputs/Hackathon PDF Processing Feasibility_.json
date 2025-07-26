@@ -2,7 +2,7 @@
   "title": "Hackathon PDF Processing Feasibility",
   "outline": [
     {
-      "level": "H1",
+      "level": "H3",
       "text": "A Technical Analysis and Implementation Strategy for the Adobe \"Connecting the Dots\" Hackathon",
       "page": 1
     },
@@ -17,69 +17,9 @@
       "page": 1
     },
     {
-      "level": "H3",
-      "text": "Local Development Machine:",
-      "page": 1
-    },
-    {
-      "level": "H1",
-      "text": "CPU:",
-      "page": 1
-    },
-    {
-      "level": "H1",
-      "text": "RAM:",
-      "page": 1
-    },
-    {
-      "level": "H1",
-      "text": "GPU:",
-      "page": 1
-    },
-    {
-      "level": "H1",
-      "text": "CPU:",
-      "page": 1
-    },
-    {
-      "level": "H1",
-      "text": "RAM:",
-      "page": 1
-    },
-    {
-      "level": "H1",
-      "text": "GPU:",
-      "page": 1
-    },
-    {
       "level": "H2",
       "text": "1.2 The 8GB RAM Bottleneck: A Critical Assessment",
       "page": 2
-    },
-    {
-      "level": "H3",
-      "text": "PDF Parsing and Data Loading:",
-      "page": 2
-    },
-    {
-      "level": "H3",
-      "text": "ML Model Loading:",
-      "page": 2
-    },
-    {
-      "level": "H3",
-      "text": "In-Memory Data Structures:",
-      "page": 2
-    },
-    {
-      "level": "H3",
-      "text": "Memory-Efficient Coding:",
-      "page": 2
-    },
-    {
-      "level": "H3",
-      "text": "Optimized Data Types:",
-      "page": 3
     },
     {
       "level": "H2",
@@ -87,23 +27,8 @@
       "page": 3
     },
     {
-      "level": "H1",
-      "text": "CPU:",
-      "page": 3
-    },
-    {
-      "level": "H1",
-      "text": "GPU:",
-      "page": 3
-    },
-    {
       "level": "H2",
       "text": "1.4 Verdict: Feasibility and Path to Success",
-      "page": 3
-    },
-    {
-      "level": "H3",
-      "text": "The verdict is clear: Building the required system on the specified laptop is challenging but unequivocally feasible.",
       "page": 3
     },
     {
@@ -122,99 +47,9 @@
       "page": 4
     },
     {
-      "level": "H3",
-      "text": "PyMuPDF (Fitz)",
-      "page": 5
-    },
-    {
-      "level": "H3",
-      "text": "Table 2.1: Python PDF Library Head-to-Head Comparison for Round 1A",
-      "page": 5
-    },
-    {
-      "level": "H3",
-      "text": "PyMuPDF (Fitz) Excellent",
-      "page": 5
-    },
-    {
-      "level": "H3",
-      "text": "Excellent",
-      "page": 5
-    },
-    {
-      "level": "H3",
-      "text": "Low High",
-      "page": 5
-    },
-    {
-      "level": "H3",
-      "text": "pdfplumber",
-      "page": 5
-    },
-    {
-      "level": "H3",
-      "text": "pdfminer.six",
-      "page": 5
-    },
-    {
-      "level": "H3",
-      "text": "PyPDF2 / pypdf",
-      "page": 5
-    },
-    {
       "level": "H2",
       "text": "2.3 Implementing a Robust Heading Detection Engine",
       "page": 6
-    },
-    {
-      "level": "H3",
-      "text": "Font Size:",
-      "page": 6
-    },
-    {
-      "level": "H3",
-      "text": "Font Weight (Bold):",
-      "page": 6
-    },
-    {
-      "level": "H3",
-      "text": "Font Name:",
-      "page": 6
-    },
-    {
-      "level": "H3",
-      "text": "Positional Data:",
-      "page": 6
-    },
-    {
-      "level": "H3",
-      "text": "Indentation:",
-      "page": 6
-    },
-    {
-      "level": "H3",
-      "text": "Vertical Spacing:",
-      "page": 6
-    },
-    {
-      "level": "H3",
-      "text": "Textual Patterns:",
-      "page": 6
-    },
-    {
-      "level": "H3",
-      "text": "Line Length and Punctuation:",
-      "page": 6
-    },
-    {
-      "level": "H3",
-      "text": "Table 2.2: Heuristics for Hierarchical Heading Classification",
-      "page": 7
-    },
-    {
-      "level": "H3",
-      "text": "Title",
-      "page": 7
     },
     {
       "level": "H2",
@@ -222,53 +57,8 @@
       "page": 7
     },
     {
-      "level": "H3",
-      "text": "Initialization:",
-      "page": 7
-    },
-    {
-      "level": "H3",
-      "text": "Global Statistics Pass:",
-      "page": 8
-    },
-    {
-      "level": "H3",
-      "text": "Boilerplate Removal:",
-      "page": 8
-    },
-    {
-      "level": "H3",
-      "text": "Classification Pass:",
-      "page": 8
-    },
-    {
-      "level": "H3",
-      "text": "Hierarchical Structuring:",
-      "page": 8
-    },
-    {
-      "level": "H3",
-      "text": "JSON Output Generation:",
-      "page": 8
-    },
-    {
       "level": "H2",
       "text": "2.5 Meeting the Constraints",
-      "page": 8
-    },
-    {
-      "level": "H3",
-      "text": "Execution Time (≤10 seconds):",
-      "page": 8
-    },
-    {
-      "level": "H3",
-      "text": "Model Size (≤200 MB):",
-      "page": 8
-    },
-    {
-      "level": "H3",
-      "text": "Offline and CPU-only:",
       "page": 8
     },
     {
@@ -282,29 +72,9 @@
       "page": 9
     },
     {
-      "level": "H3",
-      "text": "Content Ingestion and Chunking:",
-      "page": 9
-    },
-    {
-      "level": "H3",
-      "text": "Semantic Representation (Embedding):",
-      "page": 9
-    },
-    {
-      "level": "H3",
-      "text": "Relevance Ranking:",
-      "page": 9
-    },
-    {
       "level": "H2",
       "text": "3.2 Foundational Step: Intelligent Document Chunking",
       "page": 9
-    },
-    {
-      "level": "H3",
-      "text": "content-aware chunking",
-      "page": 10
     },
     {
       "level": "H2",
@@ -312,114 +82,14 @@
       "page": 10
     },
     {
-      "level": "H3",
-      "text": "Sentence Transformer",
-      "page": 10
-    },
-    {
-      "level": "H3",
-      "text": "Table 3.1: Comparison of Lightweight Sentence Transformer Models for Round 1B",
-      "page": 10
-    },
-    {
-      "level": "H3",
-      "text": "sentence-tr ansformers/",
-      "page": 11
-    },
-    {
-      "level": "H3",
-      "text": "all-MiniLM- L6-v2",
-      "page": 11
-    },
-    {
-      "level": "H1",
-      "text": "80 MB 384",
-      "page": 11
-    },
-    {
-      "level": "H3",
-      "text": "Excellent Good",
-      "page": 11
-    },
-    {
-      "level": "H3",
-      "text": "(56.09)",
-      "page": 11
-    },
-    {
-      "level": "H3",
-      "text": "BAAI/bge-s mall-en-v1.",
-      "page": 11
-    },
-    {
-      "level": "H3",
-      "text": "MinishLab/p otion-base-",
-      "page": 11
-    },
-    {
-      "level": "H3",
-      "text": "32M (Model2Vec",
-      "page": 11
-    },
-    {
-      "level": "H3",
-      "text": "Excellent",
-      "page": 11
-    },
-    {
-      "level": "H3",
-      "text": "Recommendation:",
-      "page": 11
-    },
-    {
-      "level": "H3",
-      "text": "sentence-transformers/all-MiniLM-L6-v2",
-      "page": 11
-    },
-    {
       "level": "H2",
       "text": "3.4 The Ranking Mechanism: Implementing Efficient Semantic Search",
-      "page": 12
-    },
-    {
-      "level": "H3",
-      "text": "Input Processing:",
-      "page": 12
-    },
-    {
-      "level": "H3",
-      "text": "Embedding Generation:",
-      "page": 12
-    },
-    {
-      "level": "H3",
-      "text": "Similarity Calculation and Ranking:",
-      "page": 12
-    },
-    {
-      "level": "H3",
-      "text": "Output Formatting:",
       "page": 12
     },
     {
       "level": "H2",
       "text": "3.5 Adhering to Round 1B Constraints",
       "page": 12
-    },
-    {
-      "level": "H3",
-      "text": "Processing Time (≤60 seconds):",
-      "page": 13
-    },
-    {
-      "level": "H3",
-      "text": "Model Size (≤1 GB):",
-      "page": 13
-    },
-    {
-      "level": "H3",
-      "text": "CPU-only & Offline:",
-      "page": 13
     },
     {
       "level": "H1",
@@ -437,33 +107,8 @@
       "page": 14
     },
     {
-      "level": "H3",
-      "text": "Platform:",
-      "page": 15
-    },
-    {
-      "level": "H3",
-      "text": "Offline Execution:",
-      "page": 15
-    },
-    {
       "level": "H2",
       "text": "4.3 A Complete Build-and-Run Protocol",
-      "page": 15
-    },
-    {
-      "level": "H3",
-      "text": "Create Input/Output Directories:",
-      "page": 15
-    },
-    {
-      "level": "H3",
-      "text": "Build the Docker Image:",
-      "page": 15
-    },
-    {
-      "level": "H3",
-      "text": "Run the Container:",
       "page": 15
     },
     {
@@ -482,54 +127,9 @@
       "page": 17
     },
     {
-      "level": "H3",
-      "text": "Multilingual Handling (Round 1A Bonus):",
-      "page": 17
-    },
-    {
-      "level": "H3",
-      "text": "Demonstrating Deeper Research:",
-      "page": 17
-    },
-    {
       "level": "H2",
       "text": "5.3 Final Checklist and Parting Advice",
       "page": 17
-    },
-    {
-      "level": "H3",
-      "text": "Git Project:",
-      "page": 18
-    },
-    {
-      "level": "H3",
-      "text": "Dockerfile:",
-      "page": 18
-    },
-    {
-      "level": "H3",
-      "text": "README.md:",
-      "page": 18
-    },
-    {
-      "level": "H3",
-      "text": "approach_explanation.md:",
-      "page": 18
-    },
-    {
-      "level": "H3",
-      "text": "Dependencies:",
-      "page": 18
-    },
-    {
-      "level": "H3",
-      "text": "Offline Assets:",
-      "page": 18
-    },
-    {
-      "level": "H3",
-      "text": "Works cited",
-      "page": 18
     }
   ]
 }

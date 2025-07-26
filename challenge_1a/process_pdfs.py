@@ -169,23 +169,59 @@ class PDFOutlineExtractor:
             
         return merged
     
-    def is_likely_heading(self, element: Dict, avg_font_size: float, common_fonts: set) -> bool:
+    def analyze_font_structure(self, all_elements: List[Dict]) -> Dict[str, Any]:
         """
-        Human-Like Heading Recognition
+        Analyze the font structure of the document to identify base font size and heading thresholds.
         
-        Just like how a human quickly scans a document and thinks "that looks like a heading",
-        this method combines multiple visual and contextual clues to make intelligent decisions.
+        Returns:
+            Dict containing base_font_size, heading_thresholds, and font_analysis
+        """
+        from collections import Counter
         
-        Human Recognition Patterns Simulated:
-        - "That text is bigger/bolder than normal" (typography analysis)
-        - "That follows a numbering pattern I recognize" (structural patterns)  
-        - "That's formatted like a title" (case and styling analysis)
-        - "That font looks different from the body text" (font analysis)
-        - "That's positioned like a heading" (layout analysis)
-        - "That has special formatting" (color, underline, etc.)
+        # Get all font sizes
+        font_sizes = [elem["size"] for elem in all_elements]
+        font_size_counter = Counter(font_sizes)
         
-        Unlike simple rules like "bigger font = heading", this uses weighted intelligence
-        to handle the messiness and inconsistency of real-world documents.
+        # The base font size is typically the most common font size in the document
+        # This represents the body text
+        base_font_size = font_size_counter.most_common(1)[0][0]
+        
+        # Calculate HTML heading size thresholds based on base font size
+        h1_threshold = base_font_size * 2.0     # 2em
+        h2_threshold = base_font_size * 1.5     # 1.5em  
+        h3_threshold = base_font_size * 1.17    # 1.17em
+        
+        # Find unique font sizes and categorize them
+        unique_sizes = sorted(set(font_sizes), reverse=True)
+        
+        # Categorize fonts by their likely heading level based on HTML standards
+        h1_sizes = [size for size in unique_sizes if size >= h1_threshold]
+        h2_sizes = [size for size in unique_sizes if h2_threshold <= size < h1_threshold]
+        h3_sizes = [size for size in unique_sizes if h3_threshold <= size < h2_threshold]
+        body_sizes = [size for size in unique_sizes if size < h3_threshold]
+        
+        logger.info(f"Font analysis - Base: {base_font_size:.1f}pt, H1: ≥{h1_threshold:.1f}pt, H2: {h2_threshold:.1f}-{h1_threshold:.1f}pt, H3: {h3_threshold:.1f}-{h2_threshold:.1f}pt")
+        
+        return {
+            "base_font_size": base_font_size,
+            "h1_threshold": h1_threshold,
+            "h2_threshold": h2_threshold, 
+            "h3_threshold": h3_threshold,
+            "h1_sizes": h1_sizes,
+            "h2_sizes": h2_sizes,
+            "h3_sizes": h3_sizes,
+            "body_sizes": body_sizes,
+            "unique_sizes": unique_sizes
+        }
+
+    def is_likely_heading(self, element: Dict, font_analysis: Dict, common_fonts: set) -> bool:
+        """
+        Determine if an element is likely a heading using HTML font size standards.
+        
+        Uses exact HTML heading ratios:
+        - H1: 2em (200% of base font size)
+        - H2: 1.5em (150% of base font size) 
+        - H3: 1.17em (117% of base font size)
         """
         text = element["text"]
         font_size = element["size"]
@@ -201,8 +237,29 @@ class PDFOutlineExtractor:
         if len(text.strip()) > 200:
             return False
             
-        # Font size significantly larger than average
-        size_score = font_size > (avg_font_size + self.font_size_threshold)
+        # Get font analysis data
+        base_font_size = font_analysis["base_font_size"]
+        h3_threshold = font_analysis["h3_threshold"]
+        
+        # Calculate exact font size ratio
+        size_ratio = font_size / base_font_size if base_font_size > 0 else 1.0
+        
+        # PRIMARY FILTER: Font size must meet minimum heading threshold (H3 = 1.17em)
+        if font_size < h3_threshold:
+            # Exception: if it matches very strong heading patterns, allow smaller sizes
+            strong_patterns = [
+                r'^chapter\s+\d+',
+                r'^\d+\.\s+(?![0-9])',  # "1. " not followed by number
+                r'^\d+\.\d+\s+(?![0-9])',  # "1.1 " not followed by number  
+                r'^\d+\.\d+\.\d+\s+',  # "1.1.1 "
+                r'^[IVX]+\.\s+',  # Roman numerals
+                r'^第\d+章',  # Japanese chapters
+                r'^अध्याय\s+\d+',  # Hindi chapters
+                r'^section\s+\d+',  # Section numbers
+            ]
+            
+            if not any(re.match(pattern, text.lower()) for pattern in strong_patterns):
+                return False
         
         # Text formatting flags
         is_bold = bool(flags & 16)  # fitz.TEXT_FONT_BOLD = 16
@@ -244,35 +301,48 @@ class PDFOutlineExtractor:
         starts_at_margin = bbox[0] < 72  # within 1 inch of left margin
         position_score = is_centered or starts_at_margin
         
-        # Human-like weighted decision making
-        # Just like humans don't rely on single clues, we combine multiple signals
+        # Scoring system based on HTML heading size standards
         score = 0
-        if size_score: score += 3      # "That's noticeably bigger" - strong signal
+        
+        # Font size scoring based on exact HTML heading ratios
+        if size_ratio >= 2.0:  # H1 threshold (2em)
+            score += 5
+        elif size_ratio >= 1.5:  # H2 threshold (1.5em)
+            score += 4
+        elif size_ratio >= 1.17:  # H3 threshold (1.17em)
+            score += 3
+        elif size_ratio >= 1.1:  # Slightly larger than body
+            score += 1
+        
+        # Additional signals
         if is_bold: score += 2         # "That's bold" - good signal
         if format_score: score += 1    # "That has special formatting" - weak signal
         if font_score: score += 1      # "That font looks different" - weak signal
-        if pattern_score: score += 2   # "That follows a heading pattern" - good signal
-        if extra_pattern_score: score += 1  # "That follows a special pattern" - weak signal
+        if pattern_score: score += 3   # "That follows a heading pattern" - strong signal
+        if extra_pattern_score: score += 2  # "That follows a special pattern" - good signal
         if case_score: score += 1      # "That's capitalized like a title" - weak signal
         if position_score: score += 1  # "That's positioned like a heading" - weak signal
         if is_underlined: score += 1   # "That's underlined" - weak signal
         if has_color: score += 1       # "That's in a different color" - weak signal
         
-        # Decision threshold: like a human's confidence level
-        # Require stronger evidence (higher score) for non-pattern matches
-        min_score = 3 if pattern_score else 4
+        # Decision threshold based on evidence strength
+        if pattern_score or extra_pattern_score:
+            # If it matches heading patterns, lower threshold
+            min_score = 4
+        else:
+            # If no clear patterns, require strong formatting evidence
+            min_score = 5
+            
         return score >= min_score
-    
-    def classify_heading_level(self, element: Dict, font_sizes: List[float]) -> str:
+
+    def classify_heading_level(self, element: Dict, font_analysis: Dict) -> str:
         """
-        Intelligent Hierarchy Recognition
+        Intelligent Hierarchy Recognition using exact HTML heading size standards.
         
-        Determines heading level (H1, H2, H3) using multiple signals:
-        1. Pattern-based detection (most reliable)
-        2. Font size hierarchy
-        3. Formatting characteristics
-        4. Position and indentation
-        5. Semantic analysis
+        Uses exact HTML heading ratios:
+        - H1: 2em (200% of base font size) = 32px if base is 16px
+        - H2: 1.5em (150% of base font size) = 24px if base is 16px
+        - H3: 1.17em (117% of base font size) = 18.72px if base is 16px
         
         Returns:
             str: "H1", "H2", or "H3" based on analysis
@@ -280,42 +350,68 @@ class PDFOutlineExtractor:
         text = element["text"].strip()
         font_size = element["size"]
         flags = element["flags"]
-        bbox = element["bbox"]
         
-        # 1. Pattern-based level detection (most reliable)
+        # Get font analysis data
+        base_font_size = font_analysis["base_font_size"]
+        h1_threshold = font_analysis["h1_threshold"]
+        h2_threshold = font_analysis["h2_threshold"]
+        h3_threshold = font_analysis["h3_threshold"]
+        
+        # Calculate exact font size ratio
+        size_ratio = font_size / base_font_size if base_font_size > 0 else 1.0
+        
+        # 1. Pattern-based level detection (most reliable - overrides font size)
         text_lower = text.lower()
         
-        # Clear H1 indicators
+        # Clear H1 indicators - Major sections
         if any([
             # Chapter patterns
             re.match(r'^chapter\s+\d+', text_lower),
             re.match(r'^第\d+章', text),  # Japanese chapter
             re.match(r'^अध्याय\s+\d+', text),  # Hindi chapter
-            # Major section patterns
+            # Major section patterns (single level numbering)
             re.match(r'^\d+\.\s+(?![0-9])', text),  # "1. " not followed by number
+            re.match(r'^section\s+\d+', text_lower),  # "Section 1", "Section 2"
             re.match(r'^[IVX]+\.\s+', text),  # Roman numerals
             # Common major section names
             text_lower in {'abstract', 'introduction', 'conclusion', 'references', 'bibliography',
-                          'methodology', 'results', 'discussion', 'background',
+                          'methodology', 'results', 'discussion', 'background', 'summary',
+                          'acknowledgments', 'acknowledgements', 'executive summary',
                           'はじめに', 'まとめ', 'परिचय', 'निष्कर्ष'},
-            # ALL CAPS major sections
-            text.isupper() and len(text) > 3 and len(text.split()) <= 3,
+            # ALL CAPS major sections (short phrases only)
+            text.isupper() and len(text) > 3 and len(text.split()) <= 4,
             # Part/Section markers
-            re.match(r'^(?:part|section)\s+[A-Z0-9]', text_lower)
+            re.match(r'^(?:part|section)\s+[A-Z0-9]', text_lower),
+            re.match(r'^(?:part|section)\s+\d+:', text_lower),  # "Section 1:", "Part 2:"
+            # Appendix
+            re.match(r'^appendix\s+[a-z]', text_lower),
+            # Analysis/Evaluation sections (common in academic papers)
+            re.match(r'^analysis$', text_lower),
+            re.match(r'^evaluation$', text_lower),
+            re.match(r'^implementation$', text_lower),
+            re.match(r'^related work$', text_lower),
+            re.match(r'^literature review$', text_lower),
+            # Number-only sections
+            re.match(r'^\d+$', text) and len(text) <= 2,  # "1", "2", "3" etc.
         ]):
             return "H1"
             
-        # Clear H2 indicators
+        # Clear H2 indicators - Sub-sections
         if any([
             re.match(r'^\d+\.\d+\s+(?![0-9])', text),  # "1.1 " not followed by number
             re.match(r'^[A-Z]\.\s+', text),  # "A. "
             re.match(r'^[A-Z]\d+\.\s+', text),  # "A1. "
             # Subsection with parent reference
-            re.match(r'^(?:section|part)\s+\d+\.\d+', text_lower)
+            re.match(r'^(?:section|part)\s+\d+\.\d+', text_lower),
+            # Numbered subsections without dots
+            re.match(r'^\d+\.\d+\s', text),  # "1.1 Something"
+            # Letters for subsections
+            re.match(r'^[a-z]\.\s+', text),  # "a. Something"
+            re.match(r'^[a-z]\)\s+', text),  # "a) Something"
         ]):
             return "H2"
             
-        # Clear H3 indicators
+        # Clear H3 indicators - Sub-sub-sections
         if any([
             re.match(r'^\d+\.\d+\.\d+\s+', text),  # "1.1.1 "
             re.match(r'^[A-Z]\d+\.\d+\s+', text),  # "A1.1 "
@@ -324,48 +420,45 @@ class PDFOutlineExtractor:
         ]):
             return "H3"
             
-        # 2. Font size based classification
-        # Sort unique font sizes in descending order
-        unique_sizes = sorted(set(font_sizes), reverse=True)
+        # 2. Font size based classification using EXACT HTML heading standards
+        if font_size >= h1_threshold:  # 2em threshold
+            return "H1"
+        elif font_size >= h2_threshold:  # 1.5em threshold
+            return "H2"
+        elif font_size >= h3_threshold:  # 1.17em threshold
+            return "H3"
+        
+        # 3. Fallback using font size ranking for edge cases
+        unique_sizes = font_analysis["unique_sizes"]
         
         try:
             size_rank = unique_sizes.index(font_size)
             total_sizes = len(unique_sizes)
             
-            # Adjust ranking based on total number of distinct font sizes
-            if total_sizes <= 2:
-                # Simple document with few font sizes
-                return "H1" if size_rank == 0 else "H2"
-            else:
-                # More complex document
+            # For documents with few distinct sizes
+            if total_sizes <= 3:
                 if size_rank == 0:
                     return "H1"
                 elif size_rank == 1:
                     return "H2"
                 else:
                     return "H3"
+            else:
+                # For documents with many sizes, be more selective
+                if size_rank == 0:
+                    return "H1"
+                elif size_rank == 1:
+                    return "H2"
+                elif size_rank == 2:
+                    return "H3"
+                else:
+                    return "H3"
                     
         except ValueError:
-            # Font size not in list (shouldn't happen, but fallback just in case)
-            size_rank = len(unique_sizes)
-            
-        # 3. Formatting characteristics
-        is_bold = bool(flags & 16)  # fitz.TEXT_FONT_BOLD = 16
-        is_italic = bool(flags & 8)  # fitz.TEXT_FONT_ITALIC = 8
-        
-        # 4. Position and indentation analysis
-        indent_level = bbox[0] / 72.0  # Convert to inches
-        
-        # Combine all signals for final decision
-        if size_rank == 0 or indent_level < 0.5:
-            # Largest font or minimal indentation
-            return "H1"
-        elif size_rank == 1 or (0.5 <= indent_level < 1.0):
-            # Second largest font or moderate indentation
-            return "H2"
-        else:
-            # Smaller font or larger indentation
             return "H3"
+        
+        # 4. Final fallback
+        return "H3"
     
     def extract_title(self, doc) -> str:
         """
@@ -452,9 +545,8 @@ class PDFOutlineExtractor:
             if not all_elements:
                 return {"title": title, "outline": []}
             
-            # Analyze font patterns efficiently using set operations
-            font_sizes = sorted(set(elem["size"] for elem in all_elements))
-            avg_font_size = sum(font_sizes) / len(font_sizes)
+            # Analyze font patterns efficiently using exact HTML heading standards
+            font_analysis = self.analyze_font_structure(all_elements)
             
             # Find most common fonts (likely body text) - use Counter for efficiency
             from collections import Counter
@@ -468,7 +560,7 @@ class PDFOutlineExtractor:
             heading_font_sizes = set()  # Use set for faster lookups
             
             for elem in all_elements:
-                if self.is_likely_heading(elem, avg_font_size, common_fonts):
+                if self.is_likely_heading(elem, font_analysis, common_fonts):
                     headings.append(elem)
                     heading_font_sizes.add(elem["size"])
             
@@ -478,7 +570,7 @@ class PDFOutlineExtractor:
             # Classify heading levels
             outline = []
             for heading in headings:
-                level = self.classify_heading_level(heading, heading_font_sizes)
+                level = self.classify_heading_level(heading, font_analysis)
                 outline.append({
                     "level": level,
                     "text": heading["text"],

@@ -118,6 +118,9 @@ __pypackages__/
 celerybeat-schedule
 celerybeat.pid
 
+*.requirements-ultra-minimal.txt
+*.requirements.txt
+
 # SageMath parsed files
 *.sage.py
 

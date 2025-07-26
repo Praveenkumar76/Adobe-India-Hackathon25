@@ -5,11 +5,11 @@ This project combines two powerful PDF processing capabilities:
 
 **Smart Document Structure Analyzer** - Extracts hierarchical document structure from PDFs
 
-**Multi-Collection Content Analyzer** - Processes document collections based on specific personas and use cases
+**Multi-Collection Content Analyzer** - Processes document collections based on specific personas, roles and use cases
 
 ## Key Features
 
-### Document Structure Analysis
+### Smart Document Structure Analysis
 - Extracts title and heading hierarchy (H1-H3) from PDFs
 - Tracks page locations of all structural elements
 - Handles complex layouts (multi-column, images, tables)
@@ -52,7 +52,7 @@ Challenge_1/
 - Offline processing capability
 
 ### Performance
-- Processes 50-page PDFs in <10 seconds
+- Processes 50-page PDFs in <= 10 seconds
 - Memory usage <16GB
 - Model size <200MB
 - Supports batch processing of document collections
@@ -130,6 +130,3 @@ python -m unittest discover
 # Validate against sample data
 python validate_outputs.py sample_dataset/outputs/
 ```
-
-## License
-This project is licensed under the MIT License - see the LICENSE file for details.
